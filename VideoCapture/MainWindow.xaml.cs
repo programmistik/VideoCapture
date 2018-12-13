@@ -23,6 +23,8 @@ namespace VideoCapture
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
+            Closing += (s, e) => (DataContext as IDisposable).Dispose();
         }
     }
 }
